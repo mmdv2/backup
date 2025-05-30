@@ -286,7 +286,7 @@ if (isset($_GET['run_backup']) || php_sapi_name() === 'cli') {
         </form>
 
         <footer>
-            <p>Backup System, Made by ♥️ | <a href="https://github.com/mahdiMGF2/botmirzapanel">Github</a> | <a href="https://t.me/mirzapanel">Telegram</a> | © <?php echo date('Y'); ?></p>
+            <p>Backup System, Made by ♥️ | <a href="https://github.com/mmdv2/backup">Github</a> | <a href="https://t.me/m_m_d_mmd">Telegram</a> | © <?php echo date('Y'); ?></p>
         </footer>
     </div>
 
