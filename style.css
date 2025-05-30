@@ -1,0 +1,208 @@
+:root {
+  --primary-color: #9c27b0;
+  --primary-light: #bb86fc;
+  --primary-dark: #6a0dad;
+  --background-dark: #121212;
+  --surface-dark: #1e1e1e;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --error-color: #cf6679;
+  --success-color: #03dac6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Vazirmatn", "Tahoma", sans-serif;
+}
+
+body {
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+  direction: rtl;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: radial-gradient(circle at 10% 20%, rgba(156, 39, 176, 0.3) 0%, transparent 30%), radial-gradient(circle at 90% 80%, rgba(106, 13, 173, 0.3) 0%, transparent 30%);
+  background-attachment: fixed;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 16px;
+  background: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+  color: var(--primary-light);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 2px rgba(187, 134, 252, 0.3);
+}
+
+input[type="text"]::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(156, 39, 176, 0.4);
+}
+
+.alert {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.alert-danger {
+  background: rgba(207, 102, 121, 0.2);
+  border-left: 4px solid var(--error-color);
+  color: var(--error-color);
+}
+
+.alert-success {
+  background: rgba(3, 218, 198, 0.2);
+  border-left: 4px solid var(--success-color);
+  color: var(--success-color);
+}
+
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--primary-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+
+code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+  display: inline-block;
+  margin: 0.5rem 0;
+  word-break: break-all;
+}
+
+button[onclick="copyCronCommand()"] {
+  display: inline-block;
+  width: auto;
+  padding: 0.3rem 0.8rem;
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input[type="text"],
+  button {
+    padding: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 12px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
