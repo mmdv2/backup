@@ -1,4 +1,4 @@
-# Automatic-host-backup 🚀
+# Automatic host backup 🚀
 
 #### A simple PHP-based script to automate database backups from multiple hosts 📊
 
