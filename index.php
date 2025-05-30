@@ -297,14 +297,17 @@ if (isset($_GET['run_backup']) || php_sapi_name() === 'cli') {
         }
 
         function copyCronCommand() {
-            const cronCommand = document.getElementById('cron-command').innerText;
-            navigator.clipboard.writeText(cron_command).then(() => {
+            const cronCommandElement = document.getElementById('cron-command');
+            const cronCommand = cronCommandElement.innerText;
+            navigator.clipboard.writeText(cronCommand).then(() => {
                 alert('دستور کرون‌جاب با موفقیت کپی شد!');
             }).catch(err => {
                 alert('خطا در کپی کردن دستور: ' + err);
             });
         }
     </script>
+</body>
+</html>
 </body>
 </html>
 
