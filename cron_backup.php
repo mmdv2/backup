@@ -1,4 +1,7 @@
 <?php
+date_default_timezone_set('Asia/Tehran');
+require_once __DIR__ . '/utils.php';
+
 $default_upload_path = __DIR__ . '/backups';
 if (!file_exists($default_upload_path)) {
     mkdir($default_upload_path, 0755, true);
@@ -84,11 +87,15 @@ function createAndSendBackup(array $databases, string $bot_token, string $admin_
 
     if (!empty($sql_files) && create_zip_backup($sql_files, $zip_filename)) {
         $zip_file = __DIR__ . '/backups/' . $zip_filename;
+
+        list($jy, $jm, $jd) = gregorian_to_jalali(date('Y'), date('m'), date('d'));
+        $caption = sprintf('%04d-%02d-%02d %s', $jy, $jm, $jd, date('H:i:s'));
+
         $url = "https://api.telegram.org/bot$bot_token/sendDocument";
         $post_fields = [
             'chat_id' => $admin_id,
             'document' => new CurlFile(realpath($zip_file)),
-            'caption' => date('Y-m-d H:i:s'),
+            'caption' => $caption,
         ];
 
         $ch = curl_init();
